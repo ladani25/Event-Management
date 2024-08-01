@@ -1,5 +1,7 @@
 @include('front-end.header')
 
+
+
 <!-- Hero Section Begin -->
 <section class="hero spad set-bg" data-setbg="{{ url('public/front-end/img/hero-bg.png') }}">
     <div class="container">
@@ -32,7 +34,53 @@
                 </div>
             </div>
         </div>
+        {{-- <div class="row">
+            @foreach ($event as $item)
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="discography__item">
+                        <div class="discography__item__pic">
+                            @foreach (explode(',', $item->image) as $image)
+                                <img src="{{ asset('public/images/' . $image) }}" alt="{{ $image }}"
+                                    style="width: 50px; height:50%;">
+                            @endforeach
+                        </div>
+                        <div class="discography__item__text">
+                            <span>{{ $item->price }}</span>
+                            <h4>{{ $item->name }}</h4>
+                            <h2>{{ $item->date }}</h2>
+                            <h2>{{ $item->time }}</h2>
+
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div> --}}
+
         <div class="row">
+            <div class="event__slider owl-carousel">
+                @foreach ($event as $item)
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="event__item">
+                            <div class="event__item__pic set-bg">
+                                @foreach (explode(',', $item->image) as $image)
+                                    <img src="{{ asset('public/images/' . $image) }}" alt="{{ $image }}">
+                                @endforeach
+                                <div class="tag-date">
+                                    <span>{{ $item->date }}</span>
+                                </div>
+                            </div>
+                            <div class="event__item__text">
+                                <h4>{{ $item->name }}</h4>
+                                <p><i class="fa fa-map-marker"></i> {{ $item->location }}</p>
+                                <h2>{{ $item->time }}</h2>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+
+        {{-- <div class="row">
             <div class="event__slider owl-carousel">
                 <div class="col-lg-4">
                     <div class="event__item">
@@ -47,51 +95,54 @@
                             <p><i class="fa fa-map-marker"></i> Funkhaus Berlin, Berlin, Germany</p>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="event__item">
-                        <div class="event__item__pic set-bg"
-                            data-setbg="{{ url('public/front-end/img/events/event-2.jpg') }}">
-                            <div class="tag-date">
-                                <span>Dec 15, 2019</span>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="event__item">
+                            <div class="event__item__pic set-bg"
+                                data-setbg="{{ url('public/front-end/img/events/event-2.jpg') }}">
+                                <div class="tag-date">
+                                    <span>Dec 15, 2019</span>
+                                </div>
+                            </div>
+                            <div class="event__item__text">
+                                <h4>David Guetta Miami Ultra</h4>
+                                <p><i class="fa fa-map-marker"></i> Funkhaus Berlin, Berlin, Germany</p>
                             </div>
                         </div>
-                        <div class="event__item__text">
-                            <h4>David Guetta Miami Ultra</h4>
-                            <p><i class="fa fa-map-marker"></i> Funkhaus Berlin, Berlin, Germany</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="event__item">
+                            <div class="event__item__pic set-bg"
+                                data-setbg="{{ url('public/front-end/img/events/event-3.jpg') }}">
+                                <div class="tag-date">
+                                    <span>Dec 15, 2019</span>
+                                </div>
+                            </div>
+                            <div class="event__item__text">
+                                <h4>David Guetta Miami Ultra</h4>
+                                <p><i class="fa fa-map-marker"></i> Funkhaus Berlin, Berlin, Germany</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="event__item">
+                            <div class="event__item__pic set-bg"
+                                data-setbg="{{ url('public/front-end/img/events/event-2.jpg') }}">
+                                <div class="tag-date">
+                                    <span>Dec 15, 2019</span>
+                                </div>
+                            </div>
+                            <div class="event__item__text">
+                                <h4>David Guetta Miami Ultra</h4>
+                                <p><i class="fa fa-map-marker"></i> Funkhaus Berlin, Berlin, Germany</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="event__item">
-                        <div class="event__item__pic set-bg"
-                            data-setbg="{{ url('public/front-end/img/events/event-3.jpg') }}">
-                            <div class="tag-date">
-                                <span>Dec 15, 2019</span>
-                            </div>
-                        </div>
-                        <div class="event__item__text">
-                            <h4>David Guetta Miami Ultra</h4>
-                            <p><i class="fa fa-map-marker"></i> Funkhaus Berlin, Berlin, Germany</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="event__item">
-                        <div class="event__item__pic set-bg"
-                            data-setbg="{{ url('public/front-end/img/events/event-2.jpg') }}">
-                            <div class="tag-date">
-                                <span>Dec 15, 2019</span>
-                            </div>
-                        </div>
-                        <div class="event__item__text">
-                            <h4>David Guetta Miami Ultra</h4>
-                            <p><i class="fa fa-map-marker"></i> Funkhaus Berlin, Berlin, Germany</p>
-                        </div>
-                    </div>
+                 
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 </section>
 <!-- Event Section End -->
@@ -506,3 +557,28 @@
 <!-- Countdown Section End -->
 
 @include('front-end.footer')
+
+
+{{-- <script>
+    $(document).ready(function() {
+        $(".event__slider").owlCarousel({
+            items: 3, // Number of items to show
+            loop: true,
+            margin: 10,
+            autoplay: true,
+            autoplayTimeout: 3000,
+            autoplayHoverPause: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 2
+                },
+                1000: {
+                    items: 3
+                }
+            }
+        });
+    });
+</script> --}}

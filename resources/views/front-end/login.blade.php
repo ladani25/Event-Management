@@ -16,44 +16,49 @@
 
 </head>
 
-<body class="bg-gradient-login">
-    <!-- Login Content -->
-    <div class="container-login">
-        <div class="row justify-content-center">
-            <div class="col-xl-6 col-lg-12 col-md-9">
-                <div class="card shadow-sm my-5">
-                    <div class="card-body p-0">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="login-form">
-                                    <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Login</h1>
-                                    </div>
-                                    <form class="user" action="{{ url('user_login') }}" method="POST">
-                                        @csrf
-                                        <div class="form-group">
-                                            <input type="email" name="email" class="form-control"
-                                                id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Enter Email Address">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" name="password" class="form-control"
-                                                id="exampleInputPassword" placeholder="Password">
-                                        </div>
-                                        {{-- <div class="form-group">
-                      <a class="btn btn-primary btn-block">Login</a>
-                    </div> --}}
-                                        <div class="form-group">
-                                            <button type="submit" class="btn btn-primary btn-block">Loginr</button>
-                                        </div>
 
-                                    </form>
-                                    <hr>
-                                    <div class="text-center">
-                                        <a class="font-weight-bold small" href="{{ url('register') }}">Create an
-                                            Account!</a>
-                                    </div>
-                                    <div class="text-center">
+
+<body class="bg-gradient-login" background="{{ url('public/front-end/img/hero-bg.png') }}">
+    {{-- @include('front-end.header') --}}
+    <section class="event spad">
+        <div class="container">
+            <div class="container-login">
+                <div class="row justify-content-center">
+                    <div class="col-xl-6 col-lg-12 col-md-9">
+                        <div class="card shadow-sm my-5">
+                            <div class="card-body p-0">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="login-form">
+                                            <div class="text-center">
+                                                <h1 class="h4 text-gray-900 mb-4">Login</h1>
+                                            </div>
+                                            <form class="user" action="{{ url('user_login') }}" method="POST">
+                                                @csrf
+                                                <div class="form-group">
+                                                    <input type="email" name="email" class="form-control"
+                                                        id="exampleInputEmail" aria-describedby="emailHelp"
+                                                        placeholder="Enter Email Address">
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="password" name="password" class="form-control"
+                                                        id="exampleInputPassword" placeholder="Password">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <button type="submit"
+                                                        class="btn btn-primary btn-block">Login</button>
+                                                </div>
+
+                                            </form>
+                                            <hr>
+                                            <div class="text-center">
+                                                <a class="font-weight-bold small" href="{{ url('register') }}">Create an
+                                                    Account!</a>
+                                            </div>
+                                            <div class="text-center">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -62,8 +67,12 @@
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Login Content -->
+        </div>
+    </section>
+
+    {{-- @include('front-end.footer') --}}
+
+
     <script src="{{ url('public/admin/vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ url('public/admin/vendor/bootstrap/js/bootstrap.bundle.min.j') }}s"></script>
     <script src="{{ url('public/admin/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
@@ -71,3 +80,38 @@
 </body>
 
 </html>
+
+
+{{-- @include('front-end.header')
+<section class="event spad">
+    <div class="container">
+        <div class="login-form">
+            <div class="text-center">
+                <h1 class="h4 text-gray-900 mb-4">Login</h1>
+            </div>
+            <form class="user" action="{{ url('user_login') }}" method="POST">
+                @csrf
+                <div class="form-group">
+                    <input type="email" name="email" class="form-control" id="exampleInputEmail"
+                        aria-describedby="emailHelp" placeholder="Enter Email Address">
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" class="form-control" id="exampleInputPassword"
+                        placeholder="Password">
+                </div>
+            
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block">Login</button>
+                </div>
+
+            </form>
+           
+            <div class="text-center">
+                <a class="font-weight-bold small" href="{{ url('register') }}">Create an
+                    Account!</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+@include('front-end.footer') --}}

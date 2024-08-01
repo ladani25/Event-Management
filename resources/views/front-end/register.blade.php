@@ -17,13 +17,13 @@
 
 </head>
 
-<body class="bg-gradient-login">
+<body class="bg-gradient-login" background="{{ url('public/front-end/img/hero-bg.png') }}">
     <!-- Register Content -->
     <div class="container-login">
         <div class="row justify-content-center">
-            <div class="col-xl-10 col-lg-12 col-md-9">
+            <div class="col-xl-6 col-lg-3 col-md-3">
                 <div class="card shadow-sm my-5">
-                    <div class="card-body p-0">
+                    <div class="card-body">
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="login-form">
@@ -38,13 +38,12 @@
                                                 id="exampleInputFirstName" placeholder="Enter First Name">
                                         </div>
                                         <div class="form-group">
-                                            <label><i class="fa fa-phone" aria-hidden="true">Phone Number</i></label>
+                                            <label>Phone Number</label>
                                             <input type="number" name="phone_number" class="form-control"
                                                 id="exampleInputLastName" placeholder="Enter Last Name">
                                         </div>
                                         <div class="form-group">
-                                            <label><i class="fa fa-exclamation-circle"
-                                                    aria-hidden="true">Email</i></label>
+                                            <label>Email</label>
                                             <input type="email" name="email" class="form-control"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
                                                 placeholder="Enter Email Address">
@@ -59,7 +58,7 @@
                                         </div>
 
                                     </form>
-                                    <hr>
+
                                     <div class="text-center">
                                         <a class="font-weight-bold small" href="{{ url('login') }}">Already have an
                                             account?</a>

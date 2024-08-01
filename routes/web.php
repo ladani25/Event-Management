@@ -18,9 +18,9 @@ use App\Http\Controllers\MapController;
 |
 */
 
-Route::get('/', function () {
-    return view('front-end.home');
-});
+// Route::head('/', function () {
+//     return view('front-end.home');
+// });
 
 route::get('login',[usercontrollers::class,'login']);
 route::post('user_login',[usercontrollers::class,'user_login']);
@@ -30,12 +30,13 @@ route::post('user_register',[usercontrollers::class,'user_register']);
 
 
 
-
+route::get('/',[homecontrollers::class,'home']);
 route::get('home',[homecontrollers::class,'home']);
 route::get('about',[homecontrollers::class,'about']);
 route::get('discography',[homecontrollers::class,'discography']);
 route::get('tour',[homecontrollers::class,'tour']);
-
+route::get('contact',[homecontrollers::class,'contact']);
+route::post('contact_send',[homecontrollers::class,'contact_send']);
 route::get('tickets/{id}', [homecontrollers::class, 'buyTicket'])->name('tickets');
 route::post('buy_ticket/{id}', [homecontrollers::class, 'buy_ticket'])->name('buy_ticket');
 
